@@ -10,6 +10,10 @@ This is a basic example of a 'tour' flow just using Safari with WebSockets.
 An initial request to [http://rox-websockets-example.herokuapp.com](http://rox-websockets-example.herokuapp.com/) with base64 encoded device_alias in the query_string
 will open a websocket with the server tied to that device_alias. If no device_alias is sent, no connection is created. 
 
+[http://websocket-focusdays2015.rhcloud.com?device_alias=MTgxOWI5MjFiODVmNGNkNjk3ZTUwMDgyMjBhN2NmOTIK](start websocket with 'hackzurich' device_id)
+
+
+
 ###### Step 2: Push new Content
 
 A subsequent POST to http://rox-websockets-example.herokuapp.com/webhook with device_alias in the params will find the related Websocket and 
