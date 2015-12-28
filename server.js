@@ -2,8 +2,11 @@ var WebSocketServer = require("ws").Server
 var express = require("express")
 var bodyParser = require('body-parser')
 var app = express()
-var port = process.env.PORT || 5000
-var server = app.listen(port)
+
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
+var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+
+var server = app.listen(port, ipaddress)
 var content = require('./content.json');
 
 app.use(bodyParser.json())
@@ -21,9 +24,14 @@ console.log("Websocket Server Started")
 //Create an empty object to store the Open WebSockets
 var openWebSockets = {}
 
+var logoutConnectionCount = function() {
+  console.log("Open Connections: " + Object.keys(openWebSockets).length)
+};
+
 wss.on("connection", function(ws) {
+  var deviceAlias = null
   ws.on('message', function(message) {
-    rawAlias = JSON.parse(message)["device_alias"]
+    var rawAlias = JSON.parse(message)["device_alias"]
     if (rawAlias === undefined) { 
       //Send back a message that the device_alias wasn't found
       ws.send(JSON.stringify("No Device Alias set, Connection not stored."))
@@ -53,9 +61,6 @@ wss.on("connection", function(ws) {
   })
 })
 
-logoutConnectionCount = function() {
-  console.log("Open Connections: " + Object.keys(openWebSockets).length)
-};
 
 //POST endpoint where the webhooks will be received
 app.post('/webhook', function(request, response) { 
@@ -63,10 +68,10 @@ app.post('/webhook', function(request, response) {
   response.json(200, {})
 
   //grab device_alias from the params
-  deviceAlias = request.param('device_alias')
+  var deviceAlias = request.param('device_alias')
   console.log("Webhook Device Alias" + deviceAlias)
   //find the websocket related to that device_alias
-  deviceSocket = openWebSockets[deviceAlias]
+  var deviceSocket = openWebSockets[deviceAlias]
   if (deviceSocket === undefined) { 
     //that websocket was closed or never existed
     console.log("Webhook sent for Device with no Connection")
