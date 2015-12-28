@@ -8,7 +8,9 @@ var app = express()
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
 var port      = process.env.PORT || 8000;
 
-var server = app.listen(port, ipaddress)
+var server = app.listen(port, ipaddress, , function () {
+  console.log('Ready');
+})
 var content = require('./content.json');
 
 app.use(bodyParser.json())
