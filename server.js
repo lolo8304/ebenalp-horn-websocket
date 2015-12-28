@@ -6,7 +6,7 @@ var bodyParser = require('body-parser')
 var app = express()
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port      = process.env.OPENSHIFT_NODEJS_PORT || 80;
 
 var server = app.listen(port, ipaddress)
 var content = require('./content.json');
