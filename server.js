@@ -1,6 +1,8 @@
 var WebSocketServer = require("ws").Server
-var express = require("express")
+var express = require('express');
+var fs      = require('fs');
 var bodyParser = require('body-parser')
+
 var app = express()
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
