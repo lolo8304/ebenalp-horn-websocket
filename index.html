@@ -8,7 +8,7 @@
     <script>
       deviceAlias = $.url().param('device_alias')
       console.log(deviceAlias)
-      var host = location.origin.replace(/^http/, 'ws')
+      var host = location.origin.replace(/^http/, 'ws')+':8080'
       var ws = new WebSocket(host);
       ws.onopen = function() {
         ws.send(JSON.stringify({"device_alias" : deviceAlias}));
