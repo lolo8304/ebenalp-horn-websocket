@@ -33,8 +33,8 @@ var logoutConnectionCount = function() {
 };
 
 wss.on("connection", function(ws) {
-  var deviceAlias = null
   ws.on('message', function(message) {
+    var deviceAlias = null
     var rawAlias = JSON.parse(message)["device_alias"]
     if (rawAlias === undefined) { 
       //Send back a message that the device_alias wasn't found
@@ -73,7 +73,7 @@ app.post('/webhook', function(request, response) {
 
   //grab device_alias from the params
   var deviceAlias = request.param('device_alias')
-  console.log("Webhook Device Alias" + deviceAlias)
+  console.log("Webhook Device Alias " + deviceAlias)
   //find the websocket related to that device_alias
   var deviceSocket = openWebSockets[deviceAlias]
   if (deviceSocket === undefined) { 
