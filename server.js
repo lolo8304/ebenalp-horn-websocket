@@ -1,3 +1,4 @@
+/* global openWebSockets */
 var WebSocketServer = require("ws").Server
 var express = require('express');
 var fs      = require('fs');
@@ -26,7 +27,7 @@ var wss = new WebSocketServer({server: server})
 console.log("Websocket Server Started on port 8000")
 
 //Create an empty object to store the Open WebSockets
-var openWebSockets = {}
+openWebSockets = {}
 
 var logoutConnectionCount = function() {
   console.log("Open Connections: " + Object.keys(openWebSockets).length)
