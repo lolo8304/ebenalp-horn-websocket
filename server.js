@@ -91,6 +91,8 @@ app.post('/webhook', function(request, response) {
   }
 })
 
+/* http://blog.nodejitsu.com/npmawesome-qr-codes/ */
+
 app.get('/qr', function(req, res) {  
   var code = qr.image(new Date().toString(), { type: 'svg' });
   res.type('svg');
