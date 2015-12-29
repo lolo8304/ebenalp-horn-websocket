@@ -6,7 +6,7 @@ var bodyParser = require('body-parser')
 var app = express()
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-var port      = process.env.PORT || 8000;
+var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 var server = app.listen(port, ipaddress, , function () {
   console.log('Ready');
