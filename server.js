@@ -23,7 +23,7 @@ app.use(express.static(__dirname + "/"))
 
 //Start the WebSocketServer
 var wss = new WebSocketServer({server: server})
-console.log("Websocket Server Started")
+console.log("Websocket Server Started on port 8000")
 
 //Create an empty object to store the Open WebSockets
 var openWebSockets = {}
@@ -75,6 +75,7 @@ app.post('/webhook', function(request, response) {
   var deviceAlias = request.param('device_alias')
   console.log("Webhook Device Alias " + deviceAlias)
   //find the websocket related to that device_alias
+  logoutConnectionCount();
   var deviceSocket = openWebSockets[deviceAlias]
   if (deviceSocket === undefined) { 
     //that websocket was closed or never existed
