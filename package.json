@@ -27,8 +27,8 @@
   "dependencies": {
     "express" : "4.6.1",
     "ws" : "0.4.31",
-    "body-parser" : "1.4.3"
-
+    "body-parser" : "1.4.3",
+    "qr-image" : "x"
   },
   "devDependencies": {},
   "bundleDependencies": [],

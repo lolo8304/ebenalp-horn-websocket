@@ -3,6 +3,7 @@ var WebSocketServer = require("ws").Server
 var express = require('express');
 var fs      = require('fs');
 var bodyParser = require('body-parser')
+var qr = require('qr-image');
 
 var app = express()
 
@@ -89,3 +90,9 @@ app.post('/webhook', function(request, response) {
     console.log("Webhook pushed to : " + deviceAlias)
   }
 })
+
+app.get('/qr', function(req, res) {  
+  var code = qr.image(new Date().toString(), { type: 'svg' });
+  res.type('svg');
+  code.pipe(res);
+});
