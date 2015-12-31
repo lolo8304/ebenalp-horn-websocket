@@ -8,7 +8,7 @@ var qr = require('qr-image');
 var app = express()
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port      = process.env.OPENSHIFT_NODEJS_PORT || 7001;
 
 var server = app.listen(port, ipaddress, null , function () {
   console.log('Ready');

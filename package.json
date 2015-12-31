@@ -1,22 +1,20 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "ebenalp-horn-saison-websocket",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "",
   "keywords": [
-    "OpenShift",
     "Node.js",
-    "application",
-    "openshift"
+    "application"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "Lorenz HÃnggi",
+    "email": "lolo8304@gmail.com",
+    "url": "http://github.com/lolo8304"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://github.com/lolo8304",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "url": "https://github.com/lolo8304/ebenalp-horn-websocket"
   },
 
   "engines": {

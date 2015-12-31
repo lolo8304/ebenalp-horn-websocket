@@ -1,0 +1,12 @@
+{
+  "ids": {
+    "ManagerHost": 4,
+    "LoadBalancer": 1
+  },
+  "models": {
+    "ManagerHost": {
+      "e71707bf-636b-4cb9-a9ff-b67fc35ce45b": "{\"id\":\"e71707bf-636b-4cb9-a9ff-b67fc35ce45b\",\"host\":\"localhost\",\"port\":8701,\"actions\":[\"delete\",\"edit\",\"env-set\",\"env-get\",\"stop\",\"restart\",\"cluster-restart\",\"license-push\"],\"protocol\":\"http\",\"created\":1451554604531,\"error\":null,\"errorType\":null,\"app\":{\"name\":\"ebenalp-horn-saison-websocket\",\"version\":null,\"port\":7001},\"processes\":{\"pids\":[{\"parentPid\":637,\"pid\":647,\"workerId\":0,\"listeningSockets\":[],\"isTrackingObjects\":false,\"isProfiling\":false,\"isTracing\":false,\"debugger\":{\"running\":false,\"port\":null},\"watchdogTimeout\":0,\"watchdogStallout\":0,\"isSnapshotting\":false,\"startTime\":\"2015-12-31T09:53:13.081Z\",\"stopTime\":null,\"stopReason\":\"\",\"id\":7,\"serviceInstanceId\":1},{\"parentPid\":647,\"pid\":666,\"workerId\":2,\"listeningSockets\":[{\"address\":\"0.0.0.0\",\"port\":7001,\"addressType\":4}],\"isTrackingObjects\":false,\"isProfiling\":false,\"isTracing\":false,\"debugger\":{\"running\":false,\"port\":null},\"watchdogTimeout\":0,\"watchdogStallout\":0,\"isSnapshotting\":false,\"startTime\":\"2015-12-31T09:54:01.208Z\",\"stopTime\":null,\"stopReason\":\"\",\"id\":8,\"serviceInstanceId\":1}]},\"$$hashKey\":\"object:99\",\"isHostProblem\":true}"
+    },
+    "LoadBalancer": {}
+  }
+}
